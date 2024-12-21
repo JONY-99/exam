@@ -1,24 +1,46 @@
-{% load 'static' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sardor Karimjonov</title>
-    <link rel="stylesheet" href="{% 'static' 'vendor/bootstrap.main.css' %}">
-    <link rel="stylesheet" href="{% 'static' 'vendor/bootstrap-icons/fonts/bootstrap-icons.css' %}">
-    <link rel="stylesheet" href="{% 'static' 'css/main.css' %}">
+    <title>Sardor</title>
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/font/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    {% block extra_css %}
+
+    {% endblock %}
 </head>
+
 <body>
 
-    
+    <div class="">
+        {% include 'layouts/navbar.html' %}
+    </div>
+
 
     {% block content %}
-    
-    {% endblock %}
-    
+    <h1>Hello</h1>
 
-    <script src="{% 'static' 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
-    <script src="{% 'static' 'js/main.js' %}"></script>
+    {% endblock %}
+
+
+
+
+    <div>
+        {% include 'layouts/footer.html' %}
+    </div>
+
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    {% block extra_js %}
+
+    {% endblock %}
 </body>
+
 </html>
